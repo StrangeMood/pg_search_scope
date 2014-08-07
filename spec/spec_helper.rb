@@ -5,7 +5,7 @@ require 'active_model'
 require 'active_record'
 require 'factory_girl'
 require 'faker'
-require 'rspec/rails/extensions/active_record/base'
+require 'rspec/rails/extensions/active_record/proxy'
 
 require 'pg_search_scope'
 

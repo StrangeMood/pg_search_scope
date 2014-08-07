@@ -82,7 +82,7 @@ module PgSearchScope
 
           rank = n::NamedFunction.new(scope_options[:rank_function], [rank_tsvector, tsquery, options[:normalization]])
 
-          search_scope = scoped
+          search_scope = self
 
           if options[:select_rank]
             search_scope = search_scope.select(n::As.new(rank, "#{scope_name}_rank"))
@@ -91,7 +91,7 @@ module PgSearchScope
           search_scope.where(n::TextMatch.new(tsvector, tsquery)).order(n::Descending.new(rank))
         else
           if options[:select_rank]
-            scoped.select("0 #{scope_name}_rank")
+            self.select("0 #{scope_name}_rank")
           end
         end
       }

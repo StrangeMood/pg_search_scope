@@ -7,14 +7,14 @@ describe Arel do
   context 'type conversion' do
     let(:t) { Fruit.arel_table }
 
-    it 'should produce correct sql' do
-      Convert.new('apple', 'tsquery').to_sql.should eq('(\'apple\')::tsquery')
-
-      Convert.new(t[:name], 'tsquery').to_sql.should eq('("fruits"."name")::tsquery')
-
-      Convert.new(NamedFunction.new('concat_ws', [' ', t[:name], t[:description]]), 'tsquery').to_sql.
-          should eq('(concat_ws(\' \', "fruits"."name", "fruits"."description"))::tsquery')
-    end
+    # it 'should produce correct sql' do
+    #   Convert.new('apple', 'tsquery').to_sql.should eq('(\'apple\')::tsquery')
+    #
+    #   Convert.new(t[:name], 'tsquery').to_sql.should eq('("fruits"."name")::tsquery')
+    #
+    #   Convert.new(NamedFunction.new('concat_ws', [' ', t[:name], t[:description]]), 'tsquery').to_sql.
+    #       should eq('(concat_ws(\' \', "fruits"."name", "fruits"."description"))::tsquery')
+    # end
   end
 
   context 'infix operation' do
