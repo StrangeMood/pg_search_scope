@@ -11,8 +11,8 @@ Gem::Specification.new do |gem|
   gem.summary     = %q{PostgreSQL full text search using Rails 3 scopes}
   gem.description = %q{}
 
-  gem.add_dependency 'activerecord', '~> 3.2'
-  gem.add_dependency 'activesupport', '~> 3.2'
+  gem.add_dependency 'activerecord', '> 3.2'
+  gem.add_dependency 'activesupport', '> 3.2'
 
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
